@@ -11,7 +11,7 @@
         </button>
       </div>
     </div>
-    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+    <div *ngIf="isLoggedIn" class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
       <ul class="navbar-nav mr-lg-2">
         <li class="nav-item nav-profile dropdown">
           <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -39,7 +39,7 @@
     </div>
   </nav>
   <!-- partial -->
-  <nav class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
+  <nav *ngIf="isLoggedIn" class="navbar-breadcrumb col-xl-12 col-12 d-flex flex-row p-0">
     <div class="navbar-links-wrapper d-flex align-items-stretch">
       <!-- <div class="nav-link">
         <a href="javascript:;"><i class="typcn typcn-calendar-outline"></i></a>
@@ -54,7 +54,7 @@
         <a href="javascript:;"><i class="typcn typcn-document-text"></i></a>
       </div> -->
     </div>
-    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+    <div *ngIf="isLoggedIn" class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
       <ul class="navbar-nav mr-lg-2">
         <li class="nav-item ml-0">
           <h4 class="mb-0">Home</h4>
@@ -252,26 +252,13 @@
     </div>
     <!-- partial -->
     <!-- partial:partials/_sidebar.html -->
-    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <nav *ngIf="isLoggedIn" class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item">
           <a class="nav-link" href="index.html">
             <i class="typcn typcn-chart-pie-outline menu-icon"></i>
             <span class="menu-title">Projects</span>
           </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-            <i class="typcn typcn-user-add-outline menu-icon"></i>
-            <span class="menu-title">User Pages</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="auth">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-              <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-            </ul>
-          </div>
         </li>
       </ul>
     </nav>
