@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.emittedLoginSubscription = this.authService.emitLogin().subscribe( ()=> alert(123) );
+    this.emittedLoginSubscription = this.authService.emitLogin().subscribe( ()=> this.isLoggedIn = true );
   }
 
 }
