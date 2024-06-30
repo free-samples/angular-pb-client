@@ -16,6 +16,8 @@ export class LoginComponent {
   }
   
   login(){
+    this.authService.loggedIn = true;
+    this.router.navigateByUrl('');
     this.authService.emittedLoginEvent.next(true);
   }
 }
