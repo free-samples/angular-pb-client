@@ -16,6 +16,6 @@ export class LoginComponent {
   }
   
   login(){
-    this.authService.buttonClicked.next(true);
+    this.authService.emittedLoginEvent.next(true);
   }
 }

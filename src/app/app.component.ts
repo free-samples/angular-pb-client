@@ -11,14 +11,14 @@ import { Subscription } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'my-app';
   isLoggedIn = false;
-  buttonClickedSubscription: Subscription;
+  emittedLoginSubscription: Subscription;
 
   constructor(private authService: AuthService, private router: Router){
 
   }
 
   ngOnInit(): void {
-    this.buttonClickedSubscription = this.authService.emitLogin().subscribe( ()=> alert(123) );
+    this.emittedLoginSubscription = this.authService.emitLogin().subscribe( ()=> alert(123) );
   }
 
 }
