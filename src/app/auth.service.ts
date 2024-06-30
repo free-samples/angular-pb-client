@@ -18,4 +18,9 @@ export class AuthService {
     return this.emittedLoginEvent.asObservable();
   }
 
+  public isSessionValid()
+  {
+    return this.pb.authStore.isValid;
+  }
+
 }
