@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,7 +10,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  
+  constructor( private authService: AuthService, private router: Router ){
+
+  }
+  
   login(){
-    alert('login');
+    this.authService.buttonClicked.next(true);
   }
 }
